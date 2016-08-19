@@ -1,29 +1,14 @@
-AlignParameters:
-  Enabled: false
+# Offense count: 3
+Lint/AmbiguousRegexpLiteral:
+  Exclude:
+    - 'test/integration/default/serverspec/localhost/cron_spec.rb'
 
-Encoding:
-  Enabled: false
+# Offense count: 3
+Style/GuardClause:
+  Exclude:
+    - 'resources/d.rb'
 
-ClassLength:
-  Enabled: false
-
-MethodLength:
-  Enabled: false
-
-LineLength:
-  Max: 330
-
-HashSyntax:
-  EnforcedStyle: hash_rockets
-
-Documentation:
-  Enabled: false
-
-CyclomaticComplexity:
-  Max: 10
-
-Lambda:
-  Enabled: false
-
-Metrics/PerceivedComplexity:
-  Enabled: false
+# Offense count: 3
+Style/RegexpLiteral:
+  Exclude:
+    - 'test/integration/default/serverspec/localhost/cron_spec.rb'
