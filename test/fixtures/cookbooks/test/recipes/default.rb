@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: cron_test
+# Cookbook:: test
 # Recipe:: test
 #
-# Copyright:: (c) 2008-2015, Chef Software, Inc
+# Copyright:: 2008-2017, Chef Software, Inc
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+apt_update 'update'
 
 include_recipe 'cron'
 
@@ -57,6 +59,15 @@ cron_d 'fixnum-job' do
   minute 0
   hour 1
   day 2
+  command '/bin/true'
+  user 'appuser'
+  action :create
+end
+
+cron_d 'fixnum-weekdayjob' do
+  minute 0
+  hour 1
+  weekday 2
   command '/bin/true'
   user 'appuser'
   action :create

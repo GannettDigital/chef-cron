@@ -1,7 +1,68 @@
 # cron Cookbook CHANGELOG
 This file is used to list changes made in each version of the cron cookbook.
 
+## 5.0.1 (2017-11-16)
+
+- Remove the redundant name property in the cron_d resource
+
+## 5.0.0 (2017-10-23)
+
+- Require Chef 12.7+ and remove compat_resource dependency
+- Improve the readme layout
+- Update Travis CI testing to test Chef 12/13 and also Debian 9
+
+## 4.2.0 (2017-10-23)
+
+- Activate RANDOMDELAY in cron.d template
+- Add support and testing for SLES 11
+- Update and improve testing setup
+
+## 4.1.3 (2017-06-01)
+
+- Converting integration testing to InSpec
+
+## 4.1.2 (2017-05-30)
+
+- Remove class_eval usage
+- Require Chef 12.1 not 12.5 since we use compat_resource
+
+## 4.1.1 (2017-04-11)
+
+- Ensure compatibility with Chef 12.5-12.6
+- chef-client 13 amazon linux fix
+
+## 4.1.0 (2017-03-13)
+
+- Move files out of default dirs since only Chef 11 required that
+- Fix the namespacing and cookstyle violations in validators (Fixes #80)
+- Add compat_resource depends so that Chef 12.5 is really supported
+- Remove the hostname from templates
+- Rename the test cookbook to test
+- make env variables safe if they span lines
+
+## 4.0.0 (2017-03-07)
+
+- Convert cron_d from a LWRP to a custom resource, which raises the requirement for chef-client to 12.5+
+- Fix failures on Suse and add it to the readme/metadata as a supported platform
+- Test with Local Delivery and not Rake
+
+## 3.0.0 (2016-10-06)
+
+- Remove support for Arch and Gentoo as we lack the ability to test these platforms
+- Fix the installation of the core-os package on Solaris
+
+## 2.0.0 (2016-09-15)
+
+- Update supported OS releases in the readme
+- Switch to kitchen-dokken and test on more platforms
+- Resolve foodcritic warnings
+- Split out unit testing in travis and use the rakefile with cookstyle
+- Require chef 12.1
+- Properly define the chefspec matcher
+- Use multipackage for installs
+
 ## v1.7.6 (2016-03-23)
+
 - Cleanup the cron.d jobs with the non-santized filenames to prevent duplicate job jobs if cron < 1.7.4 was ever run on the node
 
 ## v1.7.5 (2016-03-01)
